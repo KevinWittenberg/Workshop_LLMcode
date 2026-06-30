@@ -118,7 +118,7 @@
 </head>
 <body>
 <main>
-  <h1>Voorbereiding workshop: GitHub en ChatGPT</h1>
+  <h1>Voorbereiding workshop: Code schrijven met ChatGPT</h1>
   <p class="lead">Gebruik deze handout om vóór de workshop je accounts klaar te zetten. Je hebt een GitHub-account nodig, een ChatGPT-account met je <strong>@scp.nl-werkmail</strong>, en een koppeling tussen ChatGPT en GitHub.</p>
 
   <div class="card">
@@ -135,10 +135,10 @@
     <h2>1. Maak een GitHub-account</h2>
     <ol class="steps">
       <li>Ga naar <a href="https://github.com/">github.com</a>.</li>
-      <li>Klik rechtsboven op <strong>Sign up</strong>.</li>
+      <li>Klik rechtsboven op <strong>Sign up / Aanmelden</strong>.</li>
       <li>Vul je e-mailadres in en volg de stappen op het scherm.</li>
       <li>Bevestig je e-mailadres via de mail die GitHub stuurt.</li>
-      <li>Kies een sterk wachtwoord. Gebruik bij voorkeur je wachtwoordmanager.</li>
+      <li>Kies een sterk wachtwoord. Gebruik bij voorkeur een wachtwoordmanager.</li>
     </ol>
 
     <figure aria-label="Illustratieve screenshot van GitHub startpagina met rode pijl naar Sign up">
@@ -172,17 +172,35 @@
   </section>
 
   <section>
-    <h2>2. Maak of open je ChatGPT-account met je @scp.nl-adres</h2>
+    <h2>2. Maak je eigen kopie van de workshop-repository op GitHub</h2>
+    <p>Voor deze workshop hoef je Git niet lokaal te installeren. De eenvoudigste route is om de repository rechtstreeks op GitHub te <strong>forken</strong>. Een fork is je eigen GitHub-kopie van de oorspronkelijke repository. Codex kan daarna met jouw fork werken, zonder dat je eerst iets hoeft te downloaden.</p>
+
     <ol class="steps">
-      <li>Ga naar <a href="https://chatgpt.com/">chatgpt.com</a>.</li>
-      <li>Klik op <strong>Sign up</strong> als je nog geen account hebt. Heb je al een account met je werkmail, kies dan <strong>Log in</strong>.</li>
-      <li>Gebruik je <strong>@scp.nl-werkmail</strong>. Gebruik geen privé-account voor deze workshop.</li>
-      <li>Doorloop de verificatie in je mailbox.</li>
-      <li>Controleer na het inloggen of je in de juiste werkruimte of het juiste account zit.</li>
+      <li>Log in op GitHub.</li>
+      <li>Ga naar <a href="https://github.com/KevinWittenberg/Workshop_LLMcode">github.com/KevinWittenberg/Workshop_LLMcode</a>.</li>
+      <li>Klik rechtsboven op <strong>Fork</strong>.</li>
+      <li>Laat de naam bij voorkeur staan als <strong>Workshop_LLMcode</strong>.</li>
+      <li>Kies je eigen GitHub-account als eigenaar.</li>
+      <li>Klik op <strong>Create fork</strong>.</li>
+      <li>Controleer dat je nu op een adres zit zoals <span class="kbd">https://github.com/jouw-gebruikersnaam/Workshop_LLMcode</span>. Dat is de repository die je straks in Codex gebruikt.</li>
     </ol>
 
     <div class="note">
-      <strong>Tip:</strong> zie je meerdere accounts of werkruimtes? Kies de omgeving die bij je SCP-werkmail hoort voordat je GitHub koppelt.
+      <strong>Waarom een fork?</strong> Daarmee staat de workshopcode direct in je eigen GitHub-omgeving. Je hoeft niets lokaal te clonen en je hoeft Git niet te installeren. GitHub beschrijft een fork als een nieuwe repository die code en zichtbaarheid deelt met de oorspronkelijke upstream-repository.
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Maak of open je ChatGPT-account met je @scp.nl-adres</h2>
+    <ol class="steps">
+      <li>Ga naar <a href="https://chatgpt.com/">chatgpt.com</a>.</li>
+      <li>Klik op <strong>Sign up</strong> als je nog geen account hebt. Heb je al een account met je werkmail, kies dan <strong>Log in</strong>.</li>
+      <li>Gebruik je <strong>@scp.nl-werkmail</strong>. Gebruik geen privé-account voor deze workshop. Dat staat in de richtlijnen van het SCP en voorkomt dat herinneringen of context uit privégesprekken en werkgesprekken door elkaar gaan lopen.</li>
+      <li>Doorloop de verificatie in je mailbox.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Tip:</strong> zie je binnen ChatGPT meerdere accounts of environments? Kies de omgeving die bij je SCP-werkmail hoort voordat je GitHub koppelt.
     </div>
 
     <figure aria-label="Illustratieve screenshot van ChatGPT aanmeldpagina met rode pijl naar werkmailveld">
@@ -213,17 +231,21 @@
   </section>
 
   <section>
-    <h2>3. Koppel GitHub aan ChatGPT</h2>
-    <p>OpenAI beschrijft de koppeling als volgt: ga in ChatGPT naar <strong>Settings</strong> → <strong>Apps</strong>, zoek <strong>GitHub</strong>, en laat je daarna doorsturen naar GitHub om de ChatGPT-app te installeren en repositories te kiezen.</p>
+    <h2>4. Koppel GitHub aan ChatGPT en voeg je workshop-repository toe aan Codex</h2>
+    <p>Ga in ChatGPT naar <strong>Settings</strong> → <strong>Apps</strong>, zoek <strong>GitHub</strong>, en laat je daarna doorsturen naar GitHub om de ChatGPT-app te installeren en repositories te kiezen.</p>
 
     <ol class="steps">
-      <li>Open <a href="https://chatgpt.com/">chatgpt.com</a> en log in met je <strong>@scp.nl</strong>-account.</li>
+      <li>Zorg dat je <a href="https://chatgpt.com/">chatgpt.com</a> open hebt.</li>
       <li>Klik linksonder of rechtsboven op je profiel/naam en open <strong>Settings</strong>.</li>
       <li>Ga naar <strong>Apps</strong>. In sommige omgevingen heet dit <strong>Apps &amp; Connectors</strong> of <strong>Connectors</strong>.</li>
       <li>Zoek <strong>GitHub</strong> en klik op <strong>Connect</strong>.</li>
       <li>Klik op <strong>Continue to GitHub</strong> als ChatGPT daarom vraagt.</li>
       <li>Log in bij GitHub, keur de koppeling goed en kies de repositories die ChatGPT mag gebruiken.</li>
-      <li>Wacht enkele minuten als je repository niet meteen zichtbaar is. Volgens OpenAI kan er meestal ongeveer vijf minuten vertraging zijn.</li>
+      <li>Selecteer expliciet je eigen fork: <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>. Selecteer niet per ongeluk alleen de oorspronkelijke repository <span class="kbd">KevinWittenberg/Workshop_LLMcode</span>.</li>
+      <li>Wacht enkele minuten als je repository niet meteen zichtbaar is. Volgens OpenAI kan er tot ongeveer vijf minuten vertraging zijn.</li>
+      <li>Open daarna Codex vanuit ChatGPT of via de Codex-app.</li>
+      <li>Kies bij het starten van een nieuwe taak de repository <strong>Workshop_LLMcode</strong> uit jouw GitHub-account.</li>
+      <li>Controleer vóór je begint of Codex werkt in <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>. Dan schrijft Codex wijzigingen naar jouw kopie, niet naar de originele workshoprepository.</li>
     </ol>
 
     <figure aria-label="Illustratieve screenshot van ChatGPT instellingen met rode pijl naar Apps">
@@ -293,7 +315,7 @@
   </section>
 
   <section>
-    <h2>4. Controleer of alles werkt</h2>
+    <h2>5. Controleer of alles werkt</h2>
     <ol class="steps">
       <li>Open ChatGPT.</li>
       <li>Ga opnieuw naar <strong>Settings</strong> → <strong>Apps</strong>.</li>
@@ -302,23 +324,23 @@
     </ol>
 
     <div class="warning">
-      <strong>Let op:</strong> de GitHub-app is niet in elk ChatGPT-plan of elke workspace op precies dezelfde manier zichtbaar. Als je GitHub niet ziet, controleer dan eerst of je in de juiste SCP-werkruimte zit. Vraag daarna de workshopbegeleider of beheerder om hulp.
+      <strong>Let op:</strong> de GitHub-app is niet in elk ChatGPT-plan of elke workspace op precies dezelfde manier zichtbaar. Als je GitHub niet ziet, controleer dan eerst of je in de juiste SCP-werkruimte zit. Lukt er iets niet? Kom dan iets eerder voor de workshop langs zodat we je kunnen helpen.
     </div>
   </section>
 
   <section>
     <h2>Privacy en veilig werken</h2>
     <ul>
-      <li>Koppel alleen repositories die je echt nodig hebt voor de workshop.</li>
+      <li>Koppel alleen de repository die je nodig hebt voor de workshop.</li>
+      <li>Gebruik bij voorkeur je eigen fork: <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>.</li>
       <li>Gebruik geen echte onderzoeksdata, persoonsgegevens, geheime sleutels of vertrouwelijke projectinformatie.</li>
-      <li>Werk in deze workshop alleen met synthetische data.</li>
       <li>Twijfel je of iets gedeeld mag worden? Deel het dan niet en vraag eerst om hulp.</li>
     </ul>
   </section>
 
   <section>
     <h2>Bronnen</h2>
-    <p class="small">Gebruikt voor de actuele koppelstappen: OpenAI Help Center, <a href="https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt">Connecting GitHub to ChatGPT</a>, en OpenAI Help Center, <a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt">Apps in ChatGPT</a>. De afbeeldingen in deze handout zijn eigen, geannoteerde screenshot-schetsen zodat er geen persoonlijke accountgegevens of echte repositories zichtbaar zijn.</p>
+    <p class="small">Gebruikt voor de actuele stappen: GitHub Docs, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">Fork a repository</a>; OpenAI Help Center, <a href="https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt">Connecting GitHub to ChatGPT</a>; OpenAI Help Center, <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a>; en OpenAI Help Center, <a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt">Apps in ChatGPT</a>. De afbeeldingen in deze handout zijn eigen, geannoteerde screenshot-schetsen zodat er geen persoonlijke accountgegevens of echte repositories zichtbaar zijn.</p>
   </section>
 </main>
 </body>
