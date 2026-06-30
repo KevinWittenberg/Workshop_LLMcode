@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voorbereiding workshop: GitHub en ChatGPT</title>
+  <style>
+    :root {
+      --ink: #1d1d1f;
+      --muted: #5f6368;
+      --line: #d9dee7;
+      --soft: #f6f8fb;
+      --accent: #d61f1f;
+      --blue: #0969da;
+      --green: #1a7f37;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      line-height: 1.55;
+      background: #fff;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 22px 64px;
+    }
+
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.1rem); }
+    h2 { margin: 42px 0 12px; font-size: 1.65rem; border-top: 2px solid var(--line); padding-top: 26px; }
+    h3 { margin: 24px 0 8px; font-size: 1.15rem; }
+
+    a { color: var(--blue); }
+
+    .lead {
+      font-size: 1.15rem;
+      color: #333;
+      max-width: 780px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 800;
+      margin-right: 10px;
+    }
+
+    .steps { padding-left: 1.35rem; }
+    .steps li { margin: 0 0 10px; }
+
+    .note {
+      border-left: 5px solid var(--blue);
+      padding: 12px 16px;
+      background: #eef6ff;
+      border-radius: 10px;
+      margin: 16px 0;
+    }
+
+    .warning {
+      border-left: 5px solid #b42318;
+      padding: 12px 16px;
+      background: #fff4f2;
+      border-radius: 10px;
+      margin: 16px 0;
+    }
+
+    figure {
+      margin: 22px 0 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(0,0,0,.07);
+    }
+
+    figcaption {
+      padding: 11px 16px 15px;
+      font-size: .94rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: #fbfcff;
+    }
+
+    svg { display: block; width: 100%; height: auto; }
+
+    .small { color: var(--muted); font-size: .95rem; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: #f0f2f5; padding: 2px 6px; border-radius: 6px; }
+
+    @media print {
+      body { background: white; }
+      main { max-width: none; padding: 18mm; }
+      figure { break-inside: avoid; box-shadow: none; }
+      h2 { break-after: avoid; }
+      a { color: var(--ink); }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Voorbereiding workshop: Code schrijven met ChatGPT</h1>
+  <p class="lead">Gebruik deze handout om vóór de workshop je accounts klaar te zetten. Je hebt een GitHub-account nodig, een ChatGPT-account met je <strong>@scp.nl-werkmail</strong>, en een koppeling tussen ChatGPT en GitHub.</p>
+
+  <div class="card">
+    <h2 style="border-top:0; padding-top:0; margin-top:0;">Wat moet klaar zijn?</h2>
+    <ul class="checklist">
+      <li>Je kunt inloggen op <a href="https://github.com/">github.com</a>.</li>
+      <li>Je kunt inloggen op <a href="https://chatgpt.com/">chatgpt.com</a> met je <strong>@scp.nl</strong>-adres.</li>
+      <li>In ChatGPT staat GitHub gekoppeld via <span class="kbd">Settings</span> → <span class="kbd">Apps</span>.</li>
+      <li>Je hebt alleen repositories geselecteerd die je voor de workshop nodig hebt.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>1. Maak een GitHub-account</h2>
+    <ol class="steps">
+      <li>Ga naar <a href="https://github.com/">github.com</a>.</li>
+      <li>Klik rechtsboven op <strong>Sign up / Aanmelden</strong>.</li>
+      <li>Vul je e-mailadres in en volg de stappen op het scherm.</li>
+      <li>Bevestig je e-mailadres via de mail die GitHub stuurt.</li>
+      <li>Kies een sterk wachtwoord. Gebruik bij voorkeur een wachtwoordmanager.</li>
+    </ol>
+
+    <figure aria-label="Illustratieve screenshot van GitHub startpagina met rode pijl naar Sign up">
+      <svg viewBox="0 0 960 560" role="img" aria-labelledby="github-title github-desc">
+        <title id="github-title">GitHub: klik op Sign up</title>
+        <desc id="github-desc">Een gestileerde browserweergave van GitHub met een rode pijl en cirkel rond de knop Sign up.</desc>
+        <defs>
+          <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="#d61f1f" />
+          </marker>
+        </defs>
+        <rect x="0" y="0" width="960" height="560" fill="#f4f6f8"/>
+        <rect x="70" y="48" width="820" height="464" rx="18" fill="#ffffff" stroke="#cfd6e0"/>
+        <rect x="70" y="48" width="820" height="54" rx="18" fill="#24292f"/>
+        <circle cx="102" cy="75" r="8" fill="#ff5f57"/><circle cx="126" cy="75" r="8" fill="#ffbd2e"/><circle cx="150" cy="75" r="8" fill="#28c840"/>
+        <text x="190" y="82" fill="#fff" font-size="22" font-weight="700">GitHub</text>
+        <text x="630" y="82" fill="#c9d1d9" font-size="17">Sign in</text>
+        <rect x="710" y="59" width="104" height="32" rx="7" fill="#238636"/>
+        <text x="735" y="81" fill="#fff" font-size="17" font-weight="700">Sign up</text>
+        <ellipse cx="762" cy="75" rx="72" ry="36" fill="none" stroke="#d61f1f" stroke-width="6"/>
+        <line x1="515" y1="182" x2="705" y2="93" stroke="#d61f1f" stroke-width="7" marker-end="url(#arrow)"/>
+        <text x="125" y="190" fill="#24292f" font-size="42" font-weight="800">Let’s build from here</text>
+        <text x="126" y="236" fill="#57606a" font-size="22">Maak eerst je GitHub-account aan.</text>
+        <rect x="126" y="292" width="330" height="44" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
+        <text x="146" y="321" fill="#57606a" font-size="18">Email address</text>
+        <rect x="126" y="356" width="155" height="44" rx="8" fill="#238636"/>
+        <text x="153" y="385" fill="#fff" font-size="18" font-weight="700">Sign up</text>
+      </svg>
+      <figcaption>Screenshot-schets: begin op github.com en kies <strong>Sign up</strong>. De exacte vormgeving kan iets veranderen.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. Maak je eigen kopie van de workshop-repository op GitHub</h2>
+    <p>Voor deze workshop hoef je Git niet lokaal te installeren. De eenvoudigste route is om de repository rechtstreeks op GitHub te <strong>forken</strong>. Een fork is je eigen GitHub-kopie van de oorspronkelijke repository. Codex kan daarna met jouw fork werken, zonder dat je eerst iets hoeft te downloaden.</p>
+
+    <ol class="steps">
+      <li>Log in op GitHub.</li>
+      <li>Ga naar <a href="https://github.com/KevinWittenberg/Workshop_LLMcode">github.com/KevinWittenberg/Workshop_LLMcode</a>.</li>
+      <li>Klik rechtsboven op <strong>Fork</strong>.</li>
+      <li>Laat de naam bij voorkeur staan als <strong>Workshop_LLMcode</strong>.</li>
+      <li>Kies je eigen GitHub-account als eigenaar.</li>
+      <li>Klik op <strong>Create fork</strong>.</li>
+      <li>Controleer dat je nu op een adres zit zoals <span class="kbd">https://github.com/jouw-gebruikersnaam/Workshop_LLMcode</span>. Dat is de repository die je straks in Codex gebruikt.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Waarom een fork?</strong> Daarmee staat de workshopcode direct in je eigen GitHub-omgeving. Je hoeft niets lokaal te clonen en je hoeft Git niet te installeren. GitHub beschrijft een fork als een nieuwe repository die code en zichtbaarheid deelt met de oorspronkelijke upstream-repository.
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Maak of open je ChatGPT-account met je @scp.nl-adres</h2>
+    <ol class="steps">
+      <li>Ga naar <a href="https://chatgpt.com/">chatgpt.com</a>.</li>
+      <li>Klik op <strong>Sign up</strong> als je nog geen account hebt. Heb je al een account met je werkmail, kies dan <strong>Log in</strong>.</li>
+      <li>Gebruik je <strong>@scp.nl-werkmail</strong>. Gebruik geen privé-account voor deze workshop. Dat staat in de richtlijnen van het SCP en voorkomt dat herinneringen of context uit privégesprekken en werkgesprekken door elkaar gaan lopen.</li>
+      <li>Doorloop de verificatie in je mailbox.</li>
+    </ol>
+
+    <div class="note">
+      <strong>Tip:</strong> zie je binnen ChatGPT meerdere accounts of environments? Kies de omgeving die bij je SCP-werkmail hoort voordat je GitHub koppelt.
+    </div>
+
+    <figure aria-label="Illustratieve screenshot van ChatGPT aanmeldpagina met rode pijl naar werkmailveld">
+      <svg viewBox="0 0 960 560" role="img" aria-labelledby="chatgpt-title chatgpt-desc">
+        <title id="chatgpt-title">ChatGPT: gebruik @scp.nl</title>
+        <desc id="chatgpt-desc">Een gestileerde aanmeldpagina met rode markering rond het e-mailadresveld.</desc>
+        <defs>
+          <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="#d61f1f" />
+          </marker>
+        </defs>
+        <rect width="960" height="560" fill="#f7f7f4"/>
+        <rect x="285" y="50" width="390" height="460" rx="24" fill="#fff" stroke="#dadce0"/>
+        <circle cx="480" cy="112" r="28" fill="#111"/>
+        <text x="480" y="121" fill="#fff" font-size="24" text-anchor="middle" font-weight="700">AI</text>
+        <text x="480" y="172" fill="#1f1f1f" font-size="29" text-anchor="middle" font-weight="750">Welkom bij ChatGPT</text>
+        <rect x="335" y="222" width="290" height="48" rx="8" fill="#fff" stroke="#cfd4dc"/>
+        <text x="355" y="253" fill="#5f6368" font-size="18">naam@scp.nl</text>
+        <ellipse cx="480" cy="246" rx="171" ry="38" fill="none" stroke="#d61f1f" stroke-width="6"/>
+        <line x1="202" y1="338" x2="318" y2="266" stroke="#d61f1f" stroke-width="7" marker-end="url(#arrow2)"/>
+        <text x="93" y="366" fill="#d61f1f" font-size="24" font-weight="800">Gebruik je werkmail</text>
+        <rect x="335" y="288" width="290" height="48" rx="24" fill="#10a37f"/>
+        <text x="480" y="319" fill="#fff" font-size="18" text-anchor="middle" font-weight="700">Doorgaan</text>
+        <text x="480" y="374" fill="#6b7280" font-size="15" text-anchor="middle">Geen privé-account gebruiken voor de workshop</text>
+      </svg>
+      <figcaption>Screenshot-schets: gebruik bij aanmelden of inloggen je <strong>@scp.nl</strong>-adres.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>4. Koppel GitHub aan ChatGPT en voeg je workshop-repository toe aan Codex</h2>
+    <p>Ga in ChatGPT naar <strong>Settings</strong> → <strong>Apps</strong>, zoek <strong>GitHub</strong>, en laat je daarna doorsturen naar GitHub om de ChatGPT-app te installeren en repositories te kiezen.</p>
+
+    <ol class="steps">
+      <li>Zorg dat je <a href="https://chatgpt.com/">chatgpt.com</a> open hebt.</li>
+      <li>Klik linksonder of rechtsboven op je profiel/naam en open <strong>Settings</strong>.</li>
+      <li>Ga naar <strong>Apps</strong>. In sommige omgevingen heet dit <strong>Apps &amp; Connectors</strong> of <strong>Connectors</strong>.</li>
+      <li>Zoek <strong>GitHub</strong> en klik op <strong>Connect</strong>.</li>
+      <li>Klik op <strong>Continue to GitHub</strong> als ChatGPT daarom vraagt.</li>
+      <li>Log in bij GitHub, keur de koppeling goed en kies de repositories die ChatGPT mag gebruiken.</li>
+      <li>Selecteer expliciet je eigen fork: <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>. Selecteer niet per ongeluk alleen de oorspronkelijke repository <span class="kbd">KevinWittenberg/Workshop_LLMcode</span>.</li>
+      <li>Wacht enkele minuten als je repository niet meteen zichtbaar is. Volgens OpenAI kan er tot ongeveer vijf minuten vertraging zijn.</li>
+      <li>Open daarna Codex vanuit ChatGPT of via de Codex-app.</li>
+      <li>Kies bij het starten van een nieuwe taak de repository <strong>Workshop_LLMcode</strong> uit jouw GitHub-account.</li>
+      <li>Controleer vóór je begint of Codex werkt in <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>. Dan schrijft Codex wijzigingen naar jouw kopie, niet naar de originele workshoprepository.</li>
+    </ol>
+
+    <figure aria-label="Illustratieve screenshot van ChatGPT instellingen met rode pijl naar Apps">
+      <svg viewBox="0 0 960 560" role="img" aria-labelledby="settings-title settings-desc">
+        <title id="settings-title">ChatGPT Settings: kies Apps</title>
+        <desc id="settings-desc">Een gestileerd instellingenvenster met rode cirkel en pijl naar de Apps optie.</desc>
+        <defs>
+          <marker id="arrow3" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="#d61f1f" />
+          </marker>
+        </defs>
+        <rect width="960" height="560" fill="#f6f7f9"/>
+        <rect x="100" y="52" width="760" height="456" rx="20" fill="#ffffff" stroke="#d7dce3"/>
+        <text x="142" y="105" fill="#202124" font-size="28" font-weight="750">Settings</text>
+        <rect x="126" y="135" width="212" height="326" rx="14" fill="#f8fafc" stroke="#e1e5ec"/>
+        <text x="154" y="184" fill="#4b5563" font-size="18">General</text>
+        <text x="154" y="227" fill="#4b5563" font-size="18">Personalization</text>
+        <rect x="142" y="254" width="166" height="42" rx="10" fill="#eaf2ff"/>
+        <text x="154" y="282" fill="#0969da" font-size="19" font-weight="750">Apps</text>
+        <ellipse cx="225" cy="275" rx="106" ry="39" fill="none" stroke="#d61f1f" stroke-width="6"/>
+        <line x1="438" y1="145" x2="324" y2="253" stroke="#d61f1f" stroke-width="7" marker-end="url(#arrow3)"/>
+        <text x="450" y="137" fill="#d61f1f" font-size="24" font-weight="800">Stap 1: Apps</text>
+        <text x="382" y="182" fill="#202124" font-size="25" font-weight="750">Apps</text>
+        <rect x="382" y="220" width="408" height="58" rx="13" fill="#fff" stroke="#d7dce3"/>
+        <text x="408" y="256" fill="#6b7280" font-size="18">Search apps</text>
+        <rect x="382" y="310" width="408" height="72" rx="14" fill="#fff" stroke="#d7dce3"/>
+        <circle cx="424" cy="346" r="20" fill="#24292f"/>
+        <text x="424" y="353" fill="#fff" font-size="17" text-anchor="middle" font-weight="800">GH</text>
+        <text x="460" y="342" fill="#202124" font-size="20" font-weight="750">GitHub</text>
+        <text x="460" y="365" fill="#6b7280" font-size="15">Connect repositories</text>
+        <rect x="682" y="326" width="82" height="38" rx="19" fill="#111827"/>
+        <text x="723" y="351" fill="#fff" font-size="15" text-anchor="middle" font-weight="700">Connect</text>
+      </svg>
+      <figcaption>Screenshot-schets: open in ChatGPT de instellingen en kies <strong>Apps</strong>.</figcaption>
+    </figure>
+
+    <figure aria-label="Illustratieve screenshot van GitHub app-koppeling met rode cirkel rond repositorykeuze">
+      <svg viewBox="0 0 960 560" role="img" aria-labelledby="repo-title repo-desc">
+        <title id="repo-title">GitHub: kies repositories</title>
+        <desc id="repo-desc">Een gestileerde GitHub autorisatiepagina met rode markering rond Only select repositories.</desc>
+        <defs>
+          <marker id="arrow4" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+            <path d="M0,0 L12,6 L0,12 Z" fill="#d61f1f" />
+          </marker>
+        </defs>
+        <rect width="960" height="560" fill="#f4f6f8"/>
+        <rect x="150" y="50" width="660" height="460" rx="18" fill="#fff" stroke="#d0d7de"/>
+        <text x="190" y="105" fill="#24292f" font-size="27" font-weight="800">Install ChatGPT</text>
+        <text x="190" y="140" fill="#57606a" font-size="17">Selecteer welke repositories ChatGPT mag gebruiken.</text>
+        <rect x="190" y="176" width="580" height="68" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
+        <circle cx="220" cy="210" r="10" fill="#fff" stroke="#8c959f" stroke-width="3"/>
+        <text x="244" y="216" fill="#24292f" font-size="18" font-weight="650">All repositories</text>
+        <rect x="190" y="260" width="580" height="112" rx="12" fill="#fff" stroke="#0969da" stroke-width="2"/>
+        <circle cx="220" cy="294" r="10" fill="#0969da"/>
+        <circle cx="220" cy="294" r="4" fill="#fff"/>
+        <text x="244" y="300" fill="#24292f" font-size="18" font-weight="750">Only select repositories</text>
+        <rect x="244" y="322" width="300" height="36" rx="7" fill="#f6f8fa" stroke="#d0d7de"/>
+        <text x="260" y="346" fill="#57606a" font-size="15">Workshop_LLMcode</text>
+        <ellipse cx="480" cy="316" rx="330" ry="80" fill="none" stroke="#d61f1f" stroke-width="6"/>
+        <line x1="815" y1="420" x2="654" y2="357" stroke="#d61f1f" stroke-width="7" marker-end="url(#arrow4)"/>
+        <text x="612" y="448" fill="#d61f1f" font-size="23" font-weight="800">Kies alleen wat nodig is</text>
+        <rect x="590" y="418" width="180" height="44" rx="8" fill="#238636"/>
+        <text x="680" y="447" fill="#fff" font-size="17" text-anchor="middle" font-weight="800">Install & Authorize</text>
+      </svg>
+      <figcaption>Screenshot-schets: geef ChatGPT bij voorkeur alleen toegang tot de repository die je voor de workshop nodig hebt.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Controleer of alles werkt</h2>
+    <ol class="steps">
+      <li>Open ChatGPT.</li>
+      <li>Ga opnieuw naar <strong>Settings</strong> → <strong>Apps</strong>.</li>
+      <li>Open <strong>GitHub</strong>. De status moet aangeven dat GitHub gekoppeld is.</li>
+      <li>Zie je je repository niet meteen? Wacht een paar minuten en vernieuw ChatGPT.</li>
+    </ol>
+
+    <div class="warning">
+      <strong>Let op:</strong> de GitHub-app is niet in elk ChatGPT-plan of elke workspace op precies dezelfde manier zichtbaar. Als je GitHub niet ziet, controleer dan eerst of je in de juiste SCP-werkruimte zit. Lukt er iets niet? Kom dan iets eerder voor de workshop langs zodat we je kunnen helpen.
+    </div>
+  </section>
+
+  <section>
+    <h2>Privacy en veilig werken</h2>
+    <ul>
+      <li>Koppel alleen de repository die je nodig hebt voor de workshop.</li>
+      <li>Gebruik bij voorkeur je eigen fork: <span class="kbd">jouw-gebruikersnaam/Workshop_LLMcode</span>.</li>
+      <li>Gebruik geen echte onderzoeksdata, persoonsgegevens, geheime sleutels of vertrouwelijke projectinformatie.</li>
+      <li>Twijfel je of iets gedeeld mag worden? Deel het dan niet en vraag eerst om hulp.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Bronnen</h2>
+    <p class="small">Gebruikt voor de actuele stappen: GitHub Docs, <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">Fork a repository</a>; OpenAI Help Center, <a href="https://help.openai.com/en/articles/11145903-connecting-github-to-chatgpt">Connecting GitHub to ChatGPT</a>; OpenAI Help Center, <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan">Using Codex with your ChatGPT plan</a>; en OpenAI Help Center, <a href="https://help.openai.com/en/articles/11487775-connectors-in-chatgpt">Apps in ChatGPT</a>. De afbeeldingen in deze handout zijn eigen, geannoteerde screenshot-schetsen zodat er geen persoonlijke accountgegevens of echte repositories zichtbaar zijn.</p>
+  </section>
+</main>
+</body>
+</html>
